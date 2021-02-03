@@ -7,7 +7,8 @@ let dexEntry = document.querySelector("#dexEntry");
 btn.addEventListener("click", (e) => {
   e.preventDefault();
   if (pokename.value !== "") {
-    fetch("https://pokeapi.co/api/v2/pokemon/" + pokename.value)
+    let temp = pokename.value.toLowerCase();
+    fetch("https://pokeapi.co/api/v2/pokemon/" + temp)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
